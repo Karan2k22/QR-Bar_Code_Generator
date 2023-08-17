@@ -1,0 +1,124 @@
+.body1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.center_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .section1 {
+    width: 40%;
+    height: 80vh;
+    background: rgb(244 244 244);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .qr_container {
+      // width: 200px;
+      // height: 200px;
+    }
+  }
+  .section2 {
+    width: 40%;
+    height: 80vh;
+    // background: blue;
+
+    .sub_section {
+      margin: 0px 20p 0px 20px;
+      // background: red;
+      height: 80vh;
+      margin: 0px 40px 0px 40px;
+
+      .qr_style {
+        // background: red;
+        margin-top: 30px;
+        p {
+          font-size: 14px;
+          font-weight: 600;
+          margin-bottom: 6px;
+        }
+
+        .style_container {
+          display: flex;
+          justify-content: space-between;
+          width: 30%;
+
+          // button {
+          //     border: none;
+          // }
+
+          .s_btn1 {
+            border: 3px solid black;
+          }
+        }
+      }
+
+      .qr_color {
+        // background: green;
+        margin-top: 30px;
+        p {
+          font-size: 14px;
+          font-weight: 600;
+          margin-bottom: 6px;
+        }
+
+        .colos_container {
+          display: flex;
+          justify-content: space-between;
+          width: 60%;
+          // margin: 0px 20px 0px 20px;
+        }
+      }
+      .download_container {
+        margin-top: 55px;
+
+        .download_btn {
+          background: rgb(99, 99, 231);
+          padding: 10px;
+          border-radius: 16px;
+          font-weight: 750;
+          color: white;
+          border: none;
+          cursor: pointer;
+
+          &:hover {
+            border: 3px solid black;
+            color: black;
+            background: white;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+// button
+.qr_style {
+  button {
+    padding: 8px;
+  }
+}
+
+.qr_color {
+  button {
+    // padding: 16px;
+    // border-radius: 15px;
+    // border: none;
+
+    // &:hover {
+    //     border: 3px solid white;
+    // }
+  }
+}
+
+// for responsive
+@media (min-width: 600px) {
+}
