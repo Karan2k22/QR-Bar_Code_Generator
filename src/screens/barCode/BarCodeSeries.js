@@ -1,33 +1,40 @@
 import React, { useState } from "react";
 import "./BarCodeSeries.scss";
 import Barcode from "react-barcode";
+import { useNavigate } from "react-router-dom";
 
 const BarCodeSeries = () => {
+
+  const navigate = useNavigate();
+
   const [prefix_value, setprefix_value] = useState("");
   const [start_value, setstart_value] = useState(0);
   const [end_value, setend_value] = useState(0);
   const [series, setseries] = useState([]);
 
-  const [show, setShow] = useState(true); // Example state management
+  const [show, setShow] = useState(false); // Example state management
+  console.log("show",show)
   console.log("series", series);
 
-
   const generate = () => {
-    if (prefix_value && start_value && end_value) {
-      if (end_value >= start_value) {
-        setShow(true); // Show loading state before generating the series
+    let arr = [];
+    setShow(true); // Show loading state before generating the series
   
-        let arr = [];
-        for (let index = start_value; index <= end_value; index++) {
-          arr = [...arr, prefix_value + index];
+    setTimeout(() => {
+      if (prefix_value && start_value && end_value) {
+        if (end_value >= start_value) {
+          for (let index = start_value; index <= end_value; index++) {
+            arr = [...arr, prefix_value + index];
+          }
+          
+          setShow(false); // Hide loading state after generating the series
+          setseries(arr); // Assuming setSeries is a state update function
         }
-        
-        setseries(arr);
-        setShow(false); // Hide loading state after generating the series
       }
-    }
-    alert("Hi");
+      alert("Hi");
+    }, 2000);
   };
+  
   
 //   const generate = () => {
    
@@ -50,12 +57,20 @@ const BarCodeSeries = () => {
     <>
       <div className="s_main_container">
 
-      <div style={{ display: show ? "block" : "none" }} className="modal">
-  Modal
-</div>
+{show && (
+   <div style={{ display: show ? "block" : "none" }} className="modal">
+   <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
+    Please Wait While We Generating BarCode
+    </div>
+ </div>
+)}
+   
 
         {/* <div style={{visibility: show ? "visible" : "hidden"}} className="modal">Modal</div> */}
         <div className="info_container">
+          <button onClick={() => {
+navigate(-1)
+          }}>Go Back!</button>
           <h3>Generate Bar Code Series</h3>
           <div className="info_container_child">
             <div>
@@ -107,11 +122,21 @@ const BarCodeSeries = () => {
       </div>
 
       <div className="barcode_container">
-        <h2>Bar Series are :</h2>
-
-        {series.map((item, index) => {
-          return <Barcode value={item} />;
-        })}
+        {series.length !== 0 &&
+        <h2>BarCode Series are :</h2>
+        }
+{series.length === 0 ? (
+  <div>No Data</div>
+) : 
+(
+  <>
+  {series.map((item, index) => {
+    return <Barcode key={index} value={item} />;
+  })}
+  </>
+)
+}
+      
       </div>
     </>
   );
