@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/QR-Bar_Code_Generator/static/css/main.3ffa56fe.css",
-    "main.js": "/QR-Bar_Code_Generator/static/js/main.ef562d48.js",
+    "main.js": "/QR-Bar_Code_Generator/static/js/main.9ffde06c.js",
     "static/js/787.86d0d46d.chunk.js": "/QR-Bar_Code_Generator/static/js/787.86d0d46d.chunk.js",
     "index.html": "/QR-Bar_Code_Generator/index.html",
     "main.3ffa56fe.css.map": "/QR-Bar_Code_Generator/static/css/main.3ffa56fe.css.map",
-    "main.ef562d48.js.map": "/QR-Bar_Code_Generator/static/js/main.ef562d48.js.map",
+    "main.9ffde06c.js.map": "/QR-Bar_Code_Generator/static/js/main.9ffde06c.js.map",
     "787.86d0d46d.chunk.js.map": "/QR-Bar_Code_Generator/static/js/787.86d0d46d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3ffa56fe.css",
-    "static/js/main.ef562d48.js"
+    "static/js/main.9ffde06c.js"
   ]
 }
