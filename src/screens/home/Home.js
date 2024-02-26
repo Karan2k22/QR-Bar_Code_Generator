@@ -1,7 +1,7 @@
 import React from "react";
 import BarCode from "../barCode/BarCode";
 import QrCode from "../qrCode/QrCode";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { GrDownload } from "react-icons/gr";
 import { AiOutlineQrcode } from "react-icons/ai";
 import { BsQrCode, BsQrCodeScan } from "react-icons/bs";
@@ -11,6 +11,50 @@ import "./Home.scss";
 import { LuUpload } from "react-icons/lu";
 const Home = () => {
   const natigate = useNavigate();
+
+  var userAgent = navigator.userAgent;
+console.log("User Agent:", userAgent);
+document.cookie = "username=John";
+var storedValue = document.cookie;
+console.log("Stored Cookie Value:", storedValue);
+
+
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function(position) {
+      var latitude = position.coords.latitude;
+      var longitude = position.coords.longitude;
+      console.log("Latitude:", latitude, "Longitude:", longitude);
+  });
+} else {
+  console.log("Geolocation is not supported by this browser.");
+}
+
+// Local Storage
+localStorage.setItem("key", "value");
+var storedValue = localStorage.getItem("key");
+console.log("localStorage", localStorage)
+// Session Storage
+sessionStorage.setItem("key", "value");
+var storedValue = sessionStorage.getItem("key");
+
+var referrer = document.referrer;
+console.log("Referrer:", referrer);
+
+var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+console.log("Screen Width:", screenWidth, "Screen Height:", screenHeight);
+
+
+var timestamp = new Date();
+console.log("Timestamp:", timestamp);
+
+var r_state = window
+console.log("redux state", r_state);
+
+var f = window
+console.log("window info", f)
+
   return (
     <div className="h_container">
       <div className="child1">
@@ -33,7 +77,10 @@ const Home = () => {
                   natigate("/qrcode");
                 }}
               >
+                {/* <Link to={"/qrcode"}> */}
+                
                 Create QR Code Now
+                {/* </Link> */}
               </button>
               <button
                 className="btn2"
@@ -41,7 +88,10 @@ const Home = () => {
                   natigate("/barcode");
                 }}
               >
+                {/* <Link to={"/barcode"}> */}
+                
                 Create Bar Code Now
+                {/* </Link> */}
               </button>
             </div>
           </div>

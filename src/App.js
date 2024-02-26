@@ -9,7 +9,7 @@ import Footer from "./screens/Footer/Footer";
 
 const App = () => {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/barcode" element={<BarCode />} />
